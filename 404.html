@@ -1,18 +1,73 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8;"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="robots" content="all" />
-  <meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
-</head>
-<body>
-  <script type="text/plain" src="http://www.qq.com/404/search_children.js"
-          charset="utf-8" homePageUrl="/"
-          homePageName="Return Dark Hole">
-  </script>
-  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>404 - 页面未找到</title>
+        <style>
+            body {
+                background-color: #0099CC;
+                color: #FFFFFF;
+                font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+                margin-left: 100px;
+            }
+
+<pre><code>        .face &#123;
+            font-size: 100px;
+        &#125;
+
+        p &#123;
+            font-size: 24px;
+            padding: 8px;
+            line-height: 40px;
+        &#125;
+
+        .tips &#123;
+            font-size: 16px
+        &#125;
+
+        /*针对小屏幕的优化*/
+        @media screen and (max-width: 600px) &#123;
+            body &#123;
+                margin: 0 10px;
+            &#125;
+
+            p &#123;
+                font-size: 18px;
+                line-height: 30px;
+            &#125;
+
+            .tips &#123;
+                display: inline-block;
+                padding-top: 10px;
+                font-size: 14px;
+                line-height: 20px;
+            &#125;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        var i = 5; //这里是倒计时的秒数
+        var intervalid;
+        intervalid = setInterval(&quot;cutdown()&quot;, 1000);
+
+        function cutdown() &#123;
+            if (i == 0) &#123;
+                window.location.href = &quot;https://m1314.cn&quot;; //倒计时完成后跳转的地址
+                clearInterval(intervalid);
+            &#125;
+            document.getElementById(&quot;mes&quot;).innerHTML = i;
+            i--;
+        &#125;
+        window.onload = cutdown;
+    &lt;/script&gt;
+    &lt;span class=&quot;face&quot;&gt;?&lt;/span&gt;
+    &lt;p&gt;您访问的页面没有找到。
+        &lt;br&gt;
+        &lt;span id=&quot;mes&quot;&gt;&lt;/span&gt;秒后转至我的个人博客，您可以在那里试着找找您所需要的信息。
+        &lt;br&gt;
+        &lt;span class=&quot;tips&quot;&gt;如果您想了解更多信息，则可以稍后在线搜索此错误: 算了你还是别搜了……&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;</code></pre>
 </html>
