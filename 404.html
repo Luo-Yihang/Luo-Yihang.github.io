@@ -12,62 +12,55 @@
                 font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
                 margin-left: 100px;
             }
-
-<pre><code>        .face &#123;
-            font-size: 100px;
-        &#125;
-
-        p &#123;
-            font-size: 24px;
-            padding: 8px;
-            line-height: 40px;
-        &#125;
-
-        .tips &#123;
-            font-size: 16px
-        &#125;
-
-        /*针对小屏幕的优化*/
-        @media screen and (max-width: 600px) &#123;
-            body &#123;
-                margin: 0 10px;
-            &#125;
-
-            p &#123;
-                font-size: 18px;
-                line-height: 30px;
-            &#125;
-
-            .tips &#123;
-                display: inline-block;
-                padding-top: 10px;
-                font-size: 14px;
-                line-height: 20px;
-            &#125;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;script&gt;
-        var i = 5; //这里是倒计时的秒数
-        var intervalid;
-        intervalid = setInterval(&quot;cutdown()&quot;, 1000);
-
-        function cutdown() &#123;
-            if (i == 0) &#123;
-                window.location.href = &quot;https://m1314.cn&quot;; //倒计时完成后跳转的地址
-                clearInterval(intervalid);
-            &#125;
-            document.getElementById(&quot;mes&quot;).innerHTML = i;
-            i--;
-        &#125;
-        window.onload = cutdown;
-    &lt;/script&gt;
-    &lt;span class=&quot;face&quot;&gt;?&lt;/span&gt;
-    &lt;p&gt;您访问的页面没有找到。
-        &lt;br&gt;
-        &lt;span id=&quot;mes&quot;&gt;&lt;/span&gt;秒后转至我的个人博客，您可以在那里试着找找您所需要的信息。
-        &lt;br&gt;
-        &lt;span class=&quot;tips&quot;&gt;如果您想了解更多信息，则可以稍后在线搜索此错误: 算了你还是别搜了……&lt;/span&gt;&lt;/p&gt;
-&lt;/body&gt;</code></pre>
+            .face {
+                font-size: 100px;
+            }
+            p {
+                font-size: 24px;
+                padding: 8px;
+                line-height: 40px;
+            }
+            .tips {
+                font-size: 16px
+            }
+            /*针对小屏幕的优化*/
+            @media screen and (max-width: 600px) {
+                body {
+                    margin: 0 10px;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 30px;
+                }
+                .tips {
+                    display: inline-block;
+                    padding-top: 10px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var i = 5; //这里是倒计时的秒数
+            var intervalid;
+            intervalid = setInterval("cutdown()", 1000);
+            function cutdown() {
+                if (i == 0) {
+                    window.location.href = "https://m1314.cn"; //倒计时完成后跳转的地址
+                    clearInterval(intervalid);
+                }
+                document.getElementById("mes").innerHTML = i;
+                i--;
+            }
+            window.onload = cutdown;
+        </script>
+        <span class="face">?</span>
+        <p>您访问的页面没有找到。
+            <br>
+            <span id="mes"></span>秒后转至我的个人博客，您可以在那里试着找找您所需要的信息。
+            <br>
+            <span class="tips">如果您想了解更多信息，则可以稍后在线搜索此错误: 算了你还是别搜了……</span></p>
+    </body>
 </html>
