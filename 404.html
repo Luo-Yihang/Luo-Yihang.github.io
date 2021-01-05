@@ -9,7 +9,7 @@
             body {
                 background-color: #0099CC;
                 color: #FFFFFF;
-                font-family:  Lucida Console 10, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+                font-family: "Microsoft Yahei", Arial,"Helvetica Neue",  sans-serif;
                 margin-left: 100px;
             }
             .face {
@@ -43,7 +43,7 @@
     </head>
     <body>
         <script>
-            var i = 10; //countdown
+            var i = 10; //countdown in 10 seconds
             var intervalid;
             intervalid = setInterval("countdown()", 1000);
             function countdown() {
@@ -55,14 +55,16 @@
                 document.getElementById("mes").innerHTML = i;
                 i--;
             }
-            window.onload = cutdown;
+            window.onload = countdown;    // countdown starts as the page is loaded
         </script>
         <span class="face">:)</span>
         <p>404 Page Not Found :
             <br>
             <span>You ran into a Black Hole where there is nothing.</span>
             <br>
+            <span class="tips">If you'd like to know more, you can email luo_yihang@outlook to blame Luo Yihang.</span>
             <br>
-            After <span id="mes"></span> seconds, we will help you automatically return to the previous page</p>
+            <br>
+            After <span id="mes"></span> seconds, we will help you automatically return to the previous page.</p>
     </body>
 </html>
