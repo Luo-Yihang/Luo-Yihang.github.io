@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>404 - 页面未找到</title>
+        <title>404 - Page Not Found</title>
         <style>
             body {
                 background-color: #0099CC;
                 color: #FFFFFF;
-                font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+                font-family:  Lucida Console 10, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
                 margin-left: 100px;
             }
             .face {
@@ -23,7 +23,7 @@
             .tips {
                 font-size: 16px
             }
-            /*针对小屏幕的优化*/
+            /*Optimization for small screen*/
             @media screen and (max-width: 600px) {
                 body {
                     margin: 0 10px;
@@ -43,12 +43,13 @@
     </head>
     <body>
         <script>
-            var i = 5; //这里是倒计时的秒数
+            var i = 10; //countdown
             var intervalid;
-            intervalid = setInterval("cutdown()", 1000);
-            function cutdown() {
+            intervalid = setInterval("countdown()", 1000);
+            function countdown() {
                 if (i == 0) {
-                    window.location.href = "https://m1314.cn"; //倒计时完成后跳转的地址
+                    //window.location.href = "https://darklyh.com"; //you can decide to redirect to which page
+                    javascript :history.back(-1)
                     clearInterval(intervalid);
                 }
                 document.getElementById("mes").innerHTML = i;
@@ -56,11 +57,12 @@
             }
             window.onload = cutdown;
         </script>
-        <span class="face">?</span>
-        <p>您访问的页面没有找到。
+        <span class="face">:)</span>
+        <p>404 Page Not Found :
             <br>
-            <span id="mes"></span>秒后转至我的个人博客，您可以在那里试着找找您所需要的信息。
+            <span>You ran into a Black Hole where there is nothing.</span>
             <br>
-            <span class="tips">如果您想了解更多信息，则可以稍后在线搜索此错误: 算了你还是别搜了……</span></p>
+            <br>
+            After <span id="mes"></span> seconds, we will help you automatically return to the previous page</p>
     </body>
 </html>
