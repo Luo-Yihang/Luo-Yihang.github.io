@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  background-color: #a7c5e3;
+}
+
+select:focus,
+button:focus {
+  outline: 0;
+}
+
+
+.settings {
+  position: absolute;
+  top: 330px;
+  left: 222px;
+  width: 200px;
+  background-color: #ffffff;
+  height: 70px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  background-color: #000000;
+  margin-top: 260px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  width: 500px;
+  box-shadow: #d0d0d0 10px 10px 30px;
+}
+
+h2 {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 4px;
+  margin: 0 0 40px;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 300px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+.score-container {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.time-container {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+.end-game-container {
+  background-color: inherit;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+.brand {
+  background-color: #000000;
+  border-bottom: none;
+  color:  #ffffff;
+  display: inline-block;
+  line-height: 1.375em;
+  padding: 4px 35px;
+  position: relative;
+  left:0%;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+
+
+/* Custom */
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  text-align: center;
+}
+
+.header .title{
+  background-color: black;
+  height: 32.27px;
+  width: 185.14px;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 104px;
+  font-family: 'Co Text Arabic Regular', sans-serif;
+  font-size: 22px;
+  font-weight: lighter;
+  line-height: 36px;
+  color: #ffffff;
+}
+
+.header .subtitle{
+  margin-top: 8px;
+  font-size:15px;
+  font-weight: lighter;
+  color:#999;
+  font-family: 'Co Text Arabic Regular', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.Ranking-List {
+  width: 340px;
+  height: 300px;
+  margin-top: 252px;
+  margin-left: 1000px;
+  background: #fff;
+  border: 1px solid #FFF;
+  box-shadow: #d0d0d0 1px 1px 10px 0px;
+}
+
+.Ranking-List p{
+  text-align: center;
+}
+.Ranking-List ul {
+  counter-reset: section;
+}
+
+.Ranking-List li {
+  float: left;
+  width: 260px;
+  border-bottom: 1px solid #b8c2cc;
+  line-height: 46px;
+  height: 46px;
+  overflow: hidden;
+  color: #525C66;
+  font-size: 14px;
+
+}
+
+.Ranking-List li:before {
+  counter-increment: section;
+  content: counter(section);
+  display: inline-block;
+  padding: 0 12px;
+  margin-right: 10px;
+  height: 18px;
+  line-height: 18px;
+  background: #b8c2cc;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 9px
+}
+
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: solid 1px #000;
+
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png") no-repeat scroll right center transparent;
+
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+
+.container button{
+  font-size: 16px;
+  font-family: fantasy;
+  border:#ffffff;
+  border: 2px;
+  border-radius: 5px;
+}
