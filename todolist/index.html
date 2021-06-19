@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>todolist</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>todolist</h1>
+			<input v-model="inputValue" @keyup.enter="add" autofocus="autofocus" placeholder="I need to do this..." class="new-todo">
+		</div>
+
+		<div class="main">
+			<ul class="todo-list">
+				<li class="todo" v-for="(item,index) in list">
+					<div class="view">
+						<span class="index">NaN.</span>
+						<span class="text"></span>
+						<button class="delete" @click="deleter(index)">X</button>
+						<div style="clear: both;"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer">
+			<div class="manage"  v-if="list.length!=0">
+				<span class="todoNumber"> <strong></strong> todo left</span>
+				<button class="clear" @click="clearall">clear</button>
+			</div>
+			<div class="deco-1"></div>
+			<div class="deco-2"></div>
+		</div>
+
+		<div class="info">
+			<div class="guide">Press enter to set one plan;<br>
+							   Click X to delete one plan;<br>
+							   Click clear to clear all plans.</div>
+			<div class="author"> Copyright © <a href="https://www.darklyh.com">Dark Hole</a> | Powered by Luo Yihang</div>
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script>
+		var todolist = new Vue({
+			el: ".container",
+			data: {
+				list: ["template 1", "template 2", "template 3"],
+				inputValue: ""
+			},
+			methods: {
+				add:function(){
+					if(this.inputValue!=""){
+						this.list.push(this.inputValue);
+						console.log(`add: ${this.inputValue}`);
+						this.inputValue="";
+					}
+				},
+				deleter:function(index){
+					this.list.splice(index,1);
+					console.log(`delete: ${this.list[index]}`);
+				},
+				clearall:function(){
+					for(i in this.list){
+						console.log(`delete: ${this.list[i]}`)
+					}
+					this.list = [];
+				}
+			}
+		})
+	</script>
+</body>
+</html>

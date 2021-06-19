@@ -24,58 +24,61 @@
                 </div>
             </a>
                 <div class="subtitle">
-                    <p>The personal page of Luo Yihang</p>
+                    <p>The Personal Page of Luo Yihang</p>
                 </div>
         </div>
 
-        <div class="container">
-            <h2>👩‍💻 Speed Typer 👨‍💻</h2>
-            <small>Type the following:</small>
-      
-            <h1 id="word"></h1>
-      
-            <input
-              type="text"
-              id="text"
-              autocomplete="off"
-              placeholder="Type the word here..."
-              autofocus
-            />
-      
-            <p class="time-container">Time left: <span id="time">10s</span></p>
-      
-            <p class="score-container">Score: <span id="score">0</span></p>
-      
-            <div id="end-game-container" class="end-game-container"></div>
-            <br>
-            <br>
-            <button>Started Already!</button>
-          </div>
+        <div class="main-body">
 
-          <div class="Ranking-List">
-            <p>Ranking List</p>
-			<ul>
-				<li><a>DarkLyh - 382</a></li>
-				<li><a>ksada - 108</a></li>
-                <li><a>Loveyou- 72</a></li>
-                <li><a>12345- 66</a></li>
-                <li><a>qwer- 49</a></li>
-			</ul>
-          </div>
+            <div id="settings" class="settings">
+                <form id="settings-form">
+                    <div>
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="container">
+                <h2>👩‍💻 Speed Typer 👨‍💻</h2>
+                <small>Type the following:</small>
+        
+                <h1 id="word"></h1>
+        
+                <input
+                type="text"
+                id="text"
+                autocomplete="off"
+                placeholder="Type the word here..."
+                autofocus
+                />
+        
+                <p class="time-container">Time left: <span id="time">10s</span></p>
+        
+                <p class="score-container">Score: <span id="score">0</span></p>
+        
+                <div id="end-game-container" class="end-game-container"></div>
+                <br>
+                <br>
+                <button>Started Already!</button>
+            </div>
 
-          <div id="settings" class="settings">
-            <form id="settings-form">
-                <div>
-                <label for="difficulty">Difficulty</label>
-                <select id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                </div>
-            </form>
-          </div>
+            <div class="Ranking-List">
+                <p>Ranking List</p>
+                <ul>
+                    <li><a>DarkLyh - 382</a></li>
+                    <li><a>ksada - 108</a></li>
+                    <li><a>Loveyou- 72</a></li>
+                    <li><a>12345- 66</a></li>
+                    <li><a>qwer- 49</a></li>
+                </ul>
+            </div>
 
+        </div>
           <script src="script.js"></script>
     </body>
 </html>
