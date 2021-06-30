@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>todolist</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="../images/logo.jpg" type="image/x-icon"/>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
 	<div class="container">
@@ -39,13 +41,13 @@
 		<div class="info">
 			<div class="guide">Press enter to set one plan;<br>
 							   Click X to delete one plan;<br>
-							   Click clear to clear all plans.</div>
-			<div class="author"> Copyright © <a href="https://www.darklyh.com">Dark Hole</a> | Powered by Luo Yihang</div>
+							   Click clear to clear all plans.<br>
+							  *The text in todolist should be shown, but still don't know why not shown in my web*</div>
+							  
+			<div class="author"> <span>Copyright © <a href="https://www.darklyh.com" target="_blank">Dark Hole</a> | Powered by Luo Yihang </span></div>
 		</div>
 
 	</div>
-
-	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 	<script>
 		var todolist = new Vue({
 			el: ".container",
