@@ -619,11 +619,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     
     // remove "powered by" in valine
     var infoEle = document.querySelector('#valine-comments .vpower');
-    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-      infoEle.childNodes.forEach(function(item) {
-        item.parentNode.removeChild(item);
-      });
-    }
+    infoEle.remove();
 
   }, window.Valine);
 });
