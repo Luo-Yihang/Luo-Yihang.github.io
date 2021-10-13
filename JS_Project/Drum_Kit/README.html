@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.jpg">
+  <link rel="mask-icon" href="/images/logo.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.darklyh.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+<script> 
+  (function(){
+        if(''){
+            if (prompt('This passage requires password, please enter the password!') !== ''){
+                alert('Wrong password！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <meta name="description" content="01 JavaScript Drum Kit 中文指南 作者：©未枝丫简介：JavaScript30 是 Wes Bos 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。现在你看到的是这系列指南的第 1 篇。完整指南在 GitHub，喜欢请 S">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dark  Hole">
+<meta property="og:url" content="http://www.darklyh.com/JS_Project/Drum_Kit/README.html">
+<meta property="og:site_name" content="Dark  Hole">
+<meta property="og:description" content="01 JavaScript Drum Kit 中文指南 作者：©未枝丫简介：JavaScript30 是 Wes Bos 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。现在你看到的是这系列指南的第 1 篇。完整指南在 GitHub，喜欢请 S">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-13T08:35:31.964Z">
+<meta property="article:modified_time" content="2021-01-13T08:35:31.964Z">
+<meta property="article:author" content="Luo Yihang">
+<meta property="article:tag" content="Tech, Computer Science, Blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.darklyh.com/JS_Project/Drum_Kit/README">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title> | Dark  Hole
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Dark  Hole</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">The Personal Page of Luo Yihang</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/JS_Project/">JS_PROJECT</a></li>
+            <li><a href="/JS_Project/Drum_Kit/">DRUM_KIT</a></li>
+            <li>README</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1 id="01-JavaScript-Drum-Kit-中文指南"><a href="#01-JavaScript-Drum-Kit-中文指南" class="headerlink" title="01 JavaScript Drum Kit 中文指南"></a>01 JavaScript Drum Kit 中文指南</h1><blockquote>
+<p>作者：©<a target="_blank" rel="noopener" href="https://github.com/soyaine">未枝丫</a><br>简介：<a target="_blank" rel="noopener" href="https://javascript30.com/">JavaScript30</a> 是 <a target="_blank" rel="noopener" href="https://github.com/wesbos">Wes Bos</a> 推出的一个 30 天挑战。项目免费提供了 30 个视频教程、30 个挑战的起始文档和 30 个挑战解决方案源代码。目的是帮助人们用纯 JavaScript 来写东西，不借助框架和库，也不使用编译器和引用。现在你看到的是这系列指南的第 1 篇。完整指南在 <a target="_blank" rel="noopener" href="https://github.com/soyaine/JavaScript30">GitHub</a>，喜欢请 Star 哦♪(^∇^*)</p>
+</blockquote>
+<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>模拟一个打鼓的页面。用户在键盘上按下 ASDFGHJKL 这几个键时，页面上与字母对应的按钮变大变亮，对应的鼓点声音响起来。</p>
+<p><a target="_blank" rel="noopener" href="http://soyaine.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-SOYAINE.html">看在线效果</a></p>
+<h2 id="关键要点"><a href="#关键要点" class="headerlink" title="关键要点"></a>关键要点</h2><ol>
+<li>键盘事件</li>
+<li>播放声音</li>
+<li>改变样式</li>
+</ol>
+<h2 id="步骤分解"><a href="#步骤分解" class="headerlink" title="步骤分解"></a>步骤分解</h2><ol>
+<li><strong>添加键盘事件监听</strong>。在 window 上添加键盘 <code>keydown</code> 事件。</li>
+<li><strong>对应事件处理程序。</strong><ol>
+<li><strong>获取键码</strong></li>
+<li><strong>用 <code>querySelector</code> 获取元素</strong></li>
+<li><strong>获取 <code>data-key</code> 为对应键码的元素</strong></li>
+<li><strong>处理元素</strong>。播放音频、添加样式。</li>
+</ol>
+</li>
+<li><strong>为所有的 <code>div.key</code> 添加 <code>transitionened</code> 事件</strong>。<ol>
+<li><strong>获取所有样式为 <code>key</code> 的元素</strong></li>
+<li><strong>为其添加事件监听</strong></li>
+</ol>
+</li>
+<li><strong>去除样式的事件处理程序</strong></li>
+</ol>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="一些-ES6-语法"><a href="#一些-ES6-语法" class="headerlink" title="一些 ES6 语法"></a>一些 ES6 语法</h3><ol>
+<li><p> <code>const</code> ：声明一个只读的常量，标识符的值只能赋值一次。</p>
+</li>
+<li><p>`字符串 ${ 变量、属性名 } `：模板字面量（Template literals）中用于表示模板字符串的标识。特点是字符串首尾用反引号（`），内部的模板部分用 ${ } 括起来表示，具体请看<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings">MDN文档</a>。简单例子如下：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//不用模板的写法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;三是&quot;</span> + (a + b) + <span class="string">&quot;不是&quot;</span> + (<span class="number">2</span> * a + b)); <span class="comment">//&quot;三是3不是4&quot;</span></span><br><span class="line"><span class="comment">//使用模板字符串的写法</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`三是<span class="subst">$&#123;a + b&#125;</span>不是<span class="subst">$&#123;<span class="number">2</span> * a + b&#125;</span>`</span>); <span class="comment">//&quot;三是3不是4&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="forEach-与箭头函数"><a href="#forEach-与箭头函数" class="headerlink" title="forEach 与箭头函数"></a><code>forEach</code> 与箭头函数</h3></li>
+</ol>
+<p>使用 <code>document.querySelector</code> 获取一组符合 CSS 选择符的元素快照，类型为 NodeList（此对象是对于文档的实时运行的动态查询），对其进行遍历时可采用 <code>forEach</code> 方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Code from http://es6-features.org/#StatementBodies</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line">nums.forEach(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (v % <span class="number">5</span> === <span class="number">0</span>)</span><br><span class="line">		fives.push(v);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line">nums.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (v % <span class="number">5</span> === <span class="number">0</span>)</span><br><span class="line">		five.push(v);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决难点"><a href="#解决难点" class="headerlink" title="解决难点"></a>解决难点</h2><h3 id="如何将键盘按键与页面按钮对应起来？"><a href="#如何将键盘按键与页面按钮对应起来？" class="headerlink" title="如何将键盘按键与页面按钮对应起来？"></a>如何将键盘按键与页面按钮对应起来？</h3><p>连接的帮手是 <code>keydown</code> 事件中的 <code>keyCode</code> 属性，<code>keyCode</code> 属性的值和 ASCII 编码值相同（对应小写字母）。在<a target="_blank" rel="noopener" href="http://keycode.info/">这个网站</a>可以用按键盘来查看对应的键码。</p>
+<p>我们能获取到的初始页面中，按钮 <code>div</code> 和音频 <code>audio</code> 标签中都添加了一个属性 <code>data-key</code> 用于存储对应的键码，这样做的目的是，添加键盘事件监听后，触发键盘事件时即可获取事件的 <code>keyCode</code> 属性值，以此为线索，操作对应的按钮及音频。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);</span><br><span class="line"><span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`div[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="如何保证按键被按住不放时，可以马上响起连续鼓点声？"><a href="#如何保证按键被按住不放时，可以马上响起连续鼓点声？" class="headerlink" title="如何保证按键被按住不放时，可以马上响起连续鼓点声？"></a>如何保证按键被按住不放时，可以马上响起连续鼓点声？</h3><p>每次播放音频之前，设置播放时间戳为 0：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> audio = <span class="built_in">document</span>.getElementById(<span class="string">&quot;video&quot;</span>); </span><br><span class="line">audio.currentTime = <span class="number">0</span>;</span><br><span class="line">audio.play();</span><br></pre></td></tr></table></figure>
+<h3 id="如何使页面按钮恢复原状？"><a href="#如何使页面按钮恢复原状？" class="headerlink" title="如何使页面按钮恢复原状？"></a>如何使页面按钮恢复原状？</h3><p>利用一个叫 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Events/transitionend"><code>transitionend</code></a> 的事件，它在 CSS transition 结束后会被触发。我们就可以利用这个事件，在每次打鼓的效果（尺寸变大、颜色变化）完成之后，去除相应样式。</p>
+<p>在这个页面中，发生 <code>transition</code> 的样式属性不止一个（<code>box-shadow</code>, <code>transform</code>, <code>border-color</code>），所以需要添加一个判断语句，使每发生一次按键事件时，只去除一次样式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">funciton <span class="function"><span class="title">remove</span>(<span class="params">event</span>)</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (event.propertyName !== <span class="string">&#x27;border-left-color&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="built_in">this</span>.classList.remove(<span class="string">&#x27;playing&#x27;</span>);</span><br><span class="line">  <span class="comment">// event.target.classList.remove(&#x27;playing&#x27;);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/JS_Project/">JS_PROJECT</a></li>
+            <li><a href="/JS_Project/Drum_Kit/">DRUM_KIT</a></li>
+            <li>README</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-JavaScript-Drum-Kit-%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">01 JavaScript Drum Kit 中文指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="nav-number">1.1.</span> <span class="nav-text">实现效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%A6%81%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">关键要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%E5%88%86%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">步骤分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B-ES6-%E8%AF%AD%E6%B3%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">一些 ES6 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-%E4%B8%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.2.</span> <span class="nav-text">forEach 与箭头函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%9A%BE%E7%82%B9"><span class="nav-number">1.5.</span> <span class="nav-text">解决难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%B0%86%E9%94%AE%E7%9B%98%E6%8C%89%E9%94%AE%E4%B8%8E%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E5%AF%B9%E5%BA%94%E8%B5%B7%E6%9D%A5%EF%BC%9F"><span class="nav-number">1.5.1.</span> <span class="nav-text">如何将键盘按键与页面按钮对应起来？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%8C%89%E9%94%AE%E8%A2%AB%E6%8C%89%E4%BD%8F%E4%B8%8D%E6%94%BE%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%A9%AC%E4%B8%8A%E5%93%8D%E8%B5%B7%E8%BF%9E%E7%BB%AD%E9%BC%93%E7%82%B9%E5%A3%B0%EF%BC%9F"><span class="nav-number">1.5.2.</span> <span class="nav-text">如何保证按键被按住不放时，可以马上响起连续鼓点声？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E9%A1%B5%E9%9D%A2%E6%8C%89%E9%92%AE%E6%81%A2%E5%A4%8D%E5%8E%9F%E7%8A%B6%EF%BC%9F"><span class="nav-number">1.5.3.</span> <span class="nav-text">如何使页面按钮恢复原状？</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Luo Yihang"
+      src="/images/logo.jpg">
+  <p class="site-author-name" itemprop="name">Luo Yihang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Luo-Yihang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Luo-Yihang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100039748872188" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100039748872188" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/darcy_luoyihang" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;darcy_luoyihang" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:Luo_Yihang@oulook.com" title="E-Mail → mailto:Luo_Yihang@oulook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Copyright © Dark Hole | Powered by Luo Yihang</span>
+</div>
+
+<script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'lMzjSB7ll1063k7n9Y7qxohw-MdYXbMMI',
+      appKey     : 'tUIhDPBcWOt6qG0uMNKjJFQP',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+    
+    // remove "powered by" in valine
+    var infoEle = document.querySelector('#valine-comments .vpower');
+    infoEle.remove();
+
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
