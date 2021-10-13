@@ -124,6 +124,7 @@ html, body{
     font-family: 'Courier New', Courier, monospace;
 }
 .info .author{
+    text-align: center;
     margin-top: 30px;
     font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
