@@ -3,6 +3,8 @@
 body {
   background: #0f1516;
   font-family: 'Open Sans', sans-serif;
+  line-height: 2;
+  font-size: 1em;
 }
 @media (max-width: 33.9em) {
   body {
@@ -68,7 +70,7 @@ a:hover {
   }
 }
 header {
-  padding-top: 100px;
+  padding-top: 60px;
 }
 header .logo {
   margin: 0 auto;
@@ -100,17 +102,16 @@ section.main {
   color: #d7ecff;
 }
 section.main .post {
-  margin-top: 200px;
+  margin-top: 60px;
 }
 @media (max-width: 33.9em) {
   section.main .post {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 }
 section.main .post .post-header {
   position: relative;
   width: 100%;
-  margin: 0 10px;
 }
 section.main .post .post-header:before {
   position: absolute;
@@ -246,6 +247,9 @@ section.main .post-tags i {
 }
 .featherlight .featherlight-content .featherlight-close:hover {
   text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 7px #228dff;
+}
+section.main .post .content {
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 section.main .post .content h1,
 section.main .post .content h2,
