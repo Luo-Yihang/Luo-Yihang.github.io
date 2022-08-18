@@ -17,7 +17,7 @@ var configs = (function () {
         help_help: "Print this menu.",
         clear_help: "Clear the terminal screen.",
         reboot_help: "Reboot the system.",
-        exit_help: "Exit the system",
+        exit_help: "Exit the system.",
         cd_help: "Change the current working directory.",
         mv_help: "Move (rename) files.",
         rm_help: "Remove files or directories.",
@@ -35,7 +35,7 @@ var configs = (function () {
         host: "darklyh.com",
         user: "guest",
         is_root: false,
-        type_delay: 20
+        type_delay: 20,
     };
     return {
         getInstance: function (options) {
@@ -107,7 +107,7 @@ var main = (function () {
         HELP: { value: "help", help: configs.getInstance().help_help },
         CLEAR: { value: "clear", help: configs.getInstance().clear_help },
         REBOOT: { value: "reboot", help: configs.getInstance().reboot_help },
-        EXIT: {value: "exit", help: configs.getInstance.exit_help },
+        EXIT: {value: "exit", help: configs.getInstance().exit_help },
         CD: { value: "cd", help: configs.getInstance().cd_help },
         MV: { value: "mv", help: configs.getInstance().mv_help },
         RM: { value: "rm", help: configs.getInstance().rm_help },
