@@ -488,9 +488,9 @@ nav a:hover {
   pointer-events: none;
 }
 footer.footer-content {
-  padding-top: 100px;
+  padding-top: 40px;
   width: 100%;
-  min-height: 350px;
+  min-height: 200px;
   background: #0f1516;
   color: #d7ecff;
   border-top: 1px dotted #d7ecff;
@@ -532,11 +532,11 @@ footer.footer-content .footer-about {
   }
 }
 footer.footer-content .footer-social-icons {
-  margin: 80px 0 50px 0;
+  margin: 20px 0 15px 0;
 }
 @media (max-width: 33.9em) {
   footer.footer-content .footer-social-icons {
-    margin: 30px 0 25px 0;
+    margin: 10px 0 8px 0;
   }
 }
 footer.footer-content .footer-social-icons li {
@@ -553,7 +553,7 @@ footer.footer-content .footer-social-icons li a:active {
   border-bottom: 0;
 }
 footer.footer-content .footer-copyright {
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
   font-size: 0.7em;
 }
 code {
