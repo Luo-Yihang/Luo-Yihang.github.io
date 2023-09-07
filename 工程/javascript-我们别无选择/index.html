@@ -176,6 +176,7 @@
 <p>说到这，我们不得不提起现在同样被广为人知的Java语言。1995年，Oak改名Java并推出，SUN公司便大肆宣传这个刚被推出的语言能“Write Once, Run Anywhere”。网景公司的整个管理层，都变成了Java语言的忠实信徒。不过如果直接把Java拿过来做脚本语言，会使得网页过于复杂。网景公司就想着干脆就创建一个跟Java相似但更简单的语言，刚好也蹭一波潜力巨大的Java热度，就叫JavaScript吧。其实Brendan擅长的是函数式编程，且他自己并不喜欢Java这门语言。 但何苦自己是兵不是将，只能默默敲键盘。于是乎，他想着创造一个简化的函数式编程（Brendan的专长）+ 简化的面向对象编程（公司的对Java的爱）的语言，能完成些简单操作就差不多了。1995年的九月， JavaScript就此诞生。而且，只花了10天时间。</p>
 <p>JavaScript从诞生以来就杂糅着多个思想， 这种不左不右的态度一直延续至今。而且过短的开发周期使其宛若过度早产的孩童一般，为它之后的成长带来了许多的隐疾…</p>
 <img src="/%E5%B7%A5%E7%A8%8B/javascript-%E6%88%91%E4%BB%AC%E5%88%AB%E6%97%A0%E9%80%89%E6%8B%A9/NetScape_Broswer.png" class="" title="NetScape_Broswer">
+<p style="text-align: center;">网景浏览器</p>
 
 <h2 id="JavaScript-引擎和运行环境"><a href="#JavaScript-引擎和运行环境" class="headerlink" title="JavaScript 引擎和运行环境"></a>JavaScript 引擎和运行环境</h2><p>JavaScript是一门解释执行语言。这意味着源代码在执行前，无需编译为二进制文件 <em>（不过 JIT (Just-In-Time compilation) 的优化还是会编译部分被多次执行的代码以加快速度）</em>。JavaScript引擎 (engine) 就是一个运行JavaScript的容器，其本质还是一个程序，将JavaScript翻译为机器码送到CPU去执行。</p>
 <p>JavaScript的引擎其实很多。如谷歌浏览器的JavaScript引擎Chrome V8，FireFox的引擎SpiderMonkey，它们都是用C++实现的。这么多不同的引擎，是如何做到JavaScript脚本在不同引擎下得到同样的结果呢？这一切都归功于<a target="_blank" rel="noopener" href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">ECMAScript语言规范</a>，所有的引擎研发都要遵守这里面的规则。</p>
@@ -187,7 +188,7 @@
 <p>而对于异步代码，JavaScript不会等待它返回结果，而是将这个事件挂起，继续执行执行栈中的其他任务。当异步事件返回结果，将它放到消息队列中 (event loop) <em>(有的地方也叫事件队列)</em> ，被放入消息队列不会立刻执行起回调，而是等待当前执行栈中所有任务都执行完毕，主线程空闲状态，主线程会去查找事件队列中是否有任务，如果有，则取出排在第一位的事件，并把这个事件对应的回调放到执行栈中，然后执行其中的同步代码。</p>
 <p>这种获取消息，执行，一直循环往复的行为，就叫做事件循环。</p>
 <img src="/%E5%B7%A5%E7%A8%8B/javascript-%E6%88%91%E4%BB%AC%E5%88%AB%E6%97%A0%E9%80%89%E6%8B%A9/Event_Loop.webp" class="" title="Event_Loop">
-
+<p style="text-align: center;">事件循环机制</p>
 <br>
 
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>JavaScript是动态类型 (dynamically typed) 的语言，也就是说被定义的变量可以被随意的更改数据类型。</p>
@@ -222,8 +223,9 @@
 
 
 <h2 id="JavaScript-依旧蒸蒸日上"><a href="#JavaScript-依旧蒸蒸日上" class="headerlink" title="JavaScript 依旧蒸蒸日上"></a>JavaScript 依旧蒸蒸日上</h2><p>JavaScript还有许多有趣的特性没有出现在这篇文章里，比如广为诟病的 &#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;，var let const, 以及 [1, 2, 3, 4] + [5, 6, 7, 8] 会等于 “1,2,3,45,6,7,8” … 感兴趣的读者可以去深入的了解这些特性。</p>
-<p>JavaScript是浏览器唯一的王，我们没得选。许多机构，程序员依旧在在为JavaScript的成长贡献力量，JavaScript也正在逐渐努力抛弃历史遗留的问题，向着更广阔的大道走去。作为程序员，我们大可在写JavaScript时破口大骂，也可以胸怀理想，来个陈胜吴广起义，给浏览器的世界换个新王。不过，说到最后的最后，我们还是得承认它的实力，毕竟，它是一个能告诉我们先有鸡还是先有蛋的语言。</p>
+<p>JavaScript是浏览器唯一的王，我们没得选。许多机构，程序员依旧在在为JavaScript的成长贡献力量，JavaScript也正在逐渐努力抛弃历史遗留的问题，向着更广阔的大道走去。作为程序员，我们大可在写JavaScript时破口大骂，也可以胸怀理想，来个陈胜吴广起义，给浏览器的世界换个新王。不过，说到最后的最后，我们还是得承认它的实力，毕竟，它是一个能告诉我们“先有鸡还是先有蛋”的语言。</p>
 <img src="/%E5%B7%A5%E7%A8%8B/javascript-%E6%88%91%E4%BB%AC%E5%88%AB%E6%97%A0%E9%80%89%E6%8B%A9/Chicken_Egg_Sort.webp" class="" title="Chicken_Egg_Sort">
+<p style="text-align: center;">JavaScript下的“先有鸡还是先有蛋”</p>
 
 <!-- Reference:
 History: http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html
