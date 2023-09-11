@@ -54,8 +54,8 @@ var files = (function () {
         }
     };
     Singleton.defaultOptions = {
-        "about.txt": "罗奕航-新加坡南洋理工大学-计算机科学",
-        "why_this_blog_exists.txt": "https://darklyh.com/%E9%9A%8F%E7%AC%94/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%B8%96%E7%95%8C",
+        "about.txt": "Yihang (Darcy), Luo - Nanyang Technological University - Computer Science",
+        "why_this_blog_exists.txt": "https://darklyh.com/%E9%9A%8F%E7%AC%94/hello-world/",
         "contact.txt": "luo_yihang@example.com",
         "github.txt": "https://github.com/Luo-Yihang",
     };
