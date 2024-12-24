@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3DEnhancer Project Page">
+  <meta name="keywords" content="3DEnhancer, Multi-Views Enhancement, 3D Enhancement">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3DEnhancer</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1K040W2NV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G1K040W2NV');
+  </script>
+
+  <style>
+  .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- custom css file  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/twentytwenty.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body", style="padding-top: 0;">
+      <div class="container is-max-desktop head">
+        <div class="columns is-centered">
+          <div class="column has-text-centered head">
+            <div class="logo">
+            <a href="index.html">
+            </a>
+            </div>
+            <br>
+
+            <h1 class="title is-3 publication-title", style="margin-top: -0.5rem;"> 
+              <span class="title is-2" style="font-variant: small-caps; line-height: 1.8;">3DEnhancer</span>: <br>
+              Consistent Multi-View Diffusion for 3D Enhancement 
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/Luo-Yihang">Yihang Luo</a>,&nbsp;&nbsp;</span>
+              <span class="author-block">
+              <span class="author-block">
+                <a href="https://shangchenzhou.com/">Shangchen Zhou</a>,&nbsp;&nbsp;</span>
+              <span class="author-block">
+                <a href="https://nirvanalan.github.io/">Yushi Lan</a>,&nbsp;&nbsp;</span>
+              <span class="author-block">
+                <a href="https://xingangpan.github.io/">Xingang Pan</a>,&nbsp;&nbsp;</span> 
+              <span class="author-block">
+                <a href="https://www.mmlab-ntu.com/person/ccloy/">Chen Change Loy</a></span>
+              <span class="author-block">
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">S-Lab, Nanyang Technological University </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href="./xx.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="TO BE REPLACED" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <!-- <span class="link-block"> 
+                  <a href="https://github.com/Luo-Yihang/3DEnhancer" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span> -->
+
+                <!-- Demo Link. -->
+                <!-- <span class="link-block">
+                  <a href="TO BE REPLACED" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="./assets/images/hf.png">
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span> -->
+
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/N7bfyd7B4D8" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+
+            <div style="display: block; border: none; height: 580px; padding: 5px var(--edge)">
+              <div class="container is-max-desktop">
+                  <video width="820" height="410" autoplay loop muted>
+                    <source src="assets/videos/teaser.mp4" type="video/mp4">
+                  </video>
+
+                  <div class="columns is-centered has-text-centered">
+                      <div class="column is-four-fifths">
+                        <div class="content has-text-justified">
+                          <p>
+                            <strong style="color: green;">TL;DR:</strong> 
+                            <span style="font-size: 0.92em;">
+                              <span style="font-variant: small-caps;">3DEnhancer</span> employs a multi-view 
+                              diffusion model to enhance multi-view images, thus improving 3D models. Our contributions include 
+                              a robust data augmentation pipeline, and the view-consistent blocks that
+                              integrate multi-view row attention and near-view epipolar aggregation modules to promote view consistency.
+                            </span>
+                          </p>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- abstract -->
+  <section class="section" style="margin-top: 2rem;">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-four-fifths"> -->
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Despite advances in neural rendering, due to the scarcity of high-quality 3D datasets 
+              and the inherent limitations of multi-view diffusion models, view synthesis and 3D model 
+              generation are restricted to low resolutions with suboptimal multi-view consistency. 
+              In this study, we present a novel 3D enhancement pipeline, dubbed <span style="font-variant: small-caps;">3DEnhancer</span>, which employs 
+              a multi-view latent diffusion model to enhance coarse 3D inputs while preserving multi-view consistency. 
+              Our method includes a pose-aware encoder and a diffusion-based denoiser to refine low-quality 
+              multi-view images, along with data augmentation and a multi-view attention module with epipolar 
+              aggregation to maintain consistent, high-quality 3D outputs across views. Unlike existing video-based 
+              approaches, our model supports seamless multi-view enhancement with improved coherence across diverse 
+              viewing angles. Extensive evaluations show that <span style="font-variant: small-caps;">3DEnhancer</span> significantly outperforms existing methods, 
+              boosting both multi-view enhancement and per-instance 3D optimization tasks. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <!-- Visual -->
+  <!-- first row -->
+  <section class="hero is-small is-light"  style="padding-top: 2rem;">
+    <div class="is-centered has-text-centered" style="padding: 1rem;">
+      <h2 class="title is-4">Results on Enhancing Multi-Views (Reconstructed by LGM)</h2>
+    </div>
+    <div class="hero-body second-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Cake</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_cake.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_cake.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Viking</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_viking.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_viking.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Vase</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_vase.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_vase.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">House</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_house.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_house.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Skull</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_skull.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_skull.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Cartoon Girl</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_girl.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_girl.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Teddy Bear</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_teddybear.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_teddybear.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Standing Mario</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_mario.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_mario.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Sea Turtle</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_turtle.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_turtle.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+          
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Gas Can</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_gascan.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_gascan.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Old Man Sculpture</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/coarse_oldman.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/mv_refine/enhanced_oldman.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </section>
+  <!-- second row -->
+  <section class="hero is-small is-light" style="padding-top: 2rem;">
+    <div class="columns is-centered has-text-centered" style="padding: 1rem;">
+      <h2 class="title is-4">Results on Optimizing LR Gaussians</h2>
+    </div>
+    <div class="hero-body second-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Robot</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_robot.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_robot.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Well</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_well.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_well.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Cannon</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/corase_cannon.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_cannon.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Steve with a Shovel</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_steve.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_steve.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Bucket on the Chair</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_bucket.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_bucket.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Giant</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_giant.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_giant.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Soldier with a Sword</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_soldier.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_soldier.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="twentytwenty-container" data-orientation="horizontal" ratio="1">
+              <div class="desc">Bulldozer</div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/coarse_bulldozer.mp4" type="video/mp4">
+                </video> 
+              </div>
+              <div class="video">
+                <video muted autoplay="autoplay" loop="loop" width="100%">
+                  <source src="./assets/videos/lrgs_refine/enhanced_bulldozer.mp4" type="video/mp4">
+                </video> 
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+  </section>
+
+
+  <!-- Method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-four-fifths"> -->
+        <div class="column">
+          <h2 class="title is-3">Method in a Nutshell</h2>
+          <div class="content has-text-justified">
+            <p>
+              By harnessing the power of generative priors, <span style="font-variant: small-caps;">3DEnhancer</span> adapts 
+              a text-to-image diffusion model to a multi-view framework aimed at 3D enhancement. 
+              It is compatible with multi-view images generated by models like MVDream
+              or those rendered from coarse 3D representations, such as NeRF and 3DGS. 
+              Given low-quality multi-view images along with their corresponding camera poses, <span style="font-variant: small-caps;">3DEnhancer</span> aggregates multi-view 
+              information within a DiT framework using row attention and epipolar aggregation modules, 
+              improving visual quality while preserving high consistency across views. Furthermore, the model supports 
+              texture-level editing via text prompts and adjustable noise levels, allowing users to correct texture errors 
+              and control the enhancement strength.
+            </p>
+            <div class="column">
+              <img src="./assets/images/method_overview.png" />
+            </div>
+          </div>
+
+          <!--/ Interpolating. -->
+          <h3 class="title is-4">Noise Level Control</h3>
+          <div class="content has-text-justified">
+            <p>
+              To control the enhancement strength, 
+              <span style="font-variant: small-caps;">3DEnhancer</span> applies noise augmentation 
+              by adding controllable noise to the input multi-view images. Low noise levels generally result 
+              in restoration while high noise levels facilitate generation. This enables a trade-off between fidelity 
+              and quality.
+            </p>          
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column is-5 has-text-centered">
+              <img src="./assets/images/coarse_sea_turtle.0.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+              <p>Coarse Multi-view Images</p>
+            </div>
+            <div class="column interpolation-video-column">
+              <div id="interpolation-image-wrapper">
+                Loading...
+              </div>
+              <input class="slider is-fullwidth is-large is-info"
+                    id="interpolation-slider"
+                    step="1" min="0" max="100" value="0" type="range">
+                    <p>Enhanced Multi-view Images (less noise -> more noise)</p>
+            </div>
+          </div>
+          <br/>
+          <!--/ Interpolating. -->
+
+          <!-- Concurrent Work. -->
+          <!-- <div class="columns is-centered" style="margin-top: 2rem;">
+            <div class="column is-full-width">
+              <h2 class="title is-3">Related Links</h2>
+
+              <div class="content has-text-justified">
+                <p>
+                  We thank the following excellent open-source works:
+                </p>
+                <p>
+                  <a href="https://arxiv.org/abs/2104.09125">PixArt-sigma</a> TODO
+                </p>
+                <p>
+                  <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">MVDream</a>
+                  generates multi-view images with 3D attention, a controlled version can generate texture without Janus problem.
+                </p>
+                <p>
+                  <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">Era3D</a>
+                </p>
+                <p>
+                  <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">LGM</a>
+                </p>
+              </div>
+            </div>
+          </div> -->
+          <!--/ Concurrent Work. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Paper video. -->
+  <div id="spotlight-video">
+    <div class="container is-max-desktop">
+      <div class="column">
+        <h2 class="title is-3"><span class="video-title">Video Demo</span></h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/N7bfyd7B4D8?si=KZ5p9cRaVvRIPdd4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <!-- <video width="100%" id="demo-video" controls>
+            <source src="./assets/videos/demo.mp4" type="video/mp4">
+          </video> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- BibTeX. -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings&#123;luo20243denhancer,
+        title=&#123;3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement&#125;,
+        author=&#123;TO BE REPLACED&#125;,
+        booktitle=&#123;TO BE REPLACED&#125;,
+        year=&#123;2024&#125;
+      &#125;</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer" style="padding-bottom: 3rem;">
+    <div class="container">
+      <div class="content has-text-centered footer-icons">
+        <a class="icon-link" href="TO BE REPLACED" target="_blank">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <!-- <a class="icon-link" href="https://github.com/Luo-Yihang/3DEnhancer" target="_blank">
+          <i class="fab fa-github"></i>
+        </a> -->
+        <!-- <a class="icon-link" href="TO BE REPLACED" target="_blank">
+          <img src="./assets/images/hf_black.png">
+        </a> -->
+        <a class="icon-link" href="https://youtu.be/N7bfyd7B4D8" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <div class="columns is-centered"><p>
+              This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> and <a href="https://shangchenzhou.com/projects/ProPainter" target="_blank">ProPainter</a>. Thank you!
+            </p></div>
+          </div>
+        </div>
+      </div>
+
+      <!--=================Visitor==========================-->
+      <div class="content has-text-centered" style="padding:0 0 0 0">
+        <img src='https://api.infinitescript.com/badgen/count?name=sczhou/3DEnhancer&ltext=Visitors&color=3977dd' alt='visitors'>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- custom js file  -->
+  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/jquery.event.move.js"></script>
+  <script src="./assets/js/jquery.twentytwenty.js"></script>
+  <script>
+  $(function(){
+    $(".twentytwenty-container").twentytwenty();
+    // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+  });
+  </script>
+</body>
+</html>
