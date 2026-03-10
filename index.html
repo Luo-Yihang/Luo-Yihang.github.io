@@ -1,430 +1,289 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yihang Luo</title>
-  <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-  <link rel="shortcut icon" type="image/x-icon" href="images/misc/icon.jpg">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <!-- Bulma Version 0.7.5-->
-  <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
-  <link href='css/style.css?_t=20200916' rel='stylesheet' type='text/css'>
-  <script defer src="font-awesome/js/brands.min.js"></script>
-  <script defer src="font-awesome/js/regular.min.js"></script>
-  <script defer src="font-awesome/js/fontawesome.min.js"></script>
-    <style>
-      .red {
-        color: rgb(238, 76, 44);
-        font-style: normal;
-      }
-      .blue {
-        color: rgb(238, 76, 44);
-        font-style: normal;
-      }
-       
-      #intro {
-       margin-top: 0em !important;
-      }
-      
-      .content h3 {
-       margin-bottom: 1em!important;
-       margin-top: 2em!important;
-      }
+  <meta name="description" content="Yihang Luo — Ph.D. student at MMLab@NTU, research in 3D/4D spatial AI and generative world modeling." />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/avatar.jpg" />
 
-      .content figure {
-       width: 90%;
-       display: flex;
-       align-items: center;
-       overflow: hidden;
-       margin-left: auto!important;
-       margin-right: auto!important;
-      }
-      
-      .columns:not(:last-child) {
-       margin-bottom: 1.75rem!important;
-      }
-
-      #sidebar {
-        width: 75%;
-      }
-
-      @media screen and (min-width: 769px), print {
-        .column.is-2_5, .column.is-2-tablet {
-          flex: none;
-          width: 20%;
-        }
-      }
-</style>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Liu+Jian+Mao+Cao&family=Zhi+Mang+Xing&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
-
 <body>
-  <div style="display: none;">
-    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=_e4qkA_ZEcNpfyXgwrX_OGruuzFa8aLMwUiRkV7HkT8&cl=ffffff&w=a"></script>
-  </div>
 
-  <section class="section" style="padding-bottom: 0.5rem">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-2_5">
-          <div class="sticky">
-            <figure class="image" style="width: 11.6rem; margin-top: 6px;">
-              <img src="images/misc/profile.jpg">
-            </figure>
-            <div class="content">
-              <h2 style="margin-top: 1em">Yihang Luo</h2>
-              <p>
-                <b>MMLab@NTU</b><br/> 
-                Singapore<br/>
-              </p>
-            </div>
-            <!-- social network icons -->
-            <div class="social">
-              <a href="https://github.com/Luo-Yihang" target="_blank">
-                <span class="fab fa-github fa-2x" style="display:inline; text-decoration: none; color: #4a4a4a;"></span>
-              </a>
-              <a href="https://scholar.google.com/citations?user=fZxK2B0AAAAJ&hl" target="_blank">
-                <span class="fab fa-google fa-2x" style="display:inline; text-decoration: none; color: #4a4a4a; margin-left: 15px"></span>
-              </a>
-              <a href="https://www.linkedin.com/in/yihang-luo/" target="_blank">
-                <span class="fab fa-linkedin fa-2x" style="display:inline; text-decoration: none; color: #4a4a4a; margin-left: 15px"></span>
-              </a>
-              <a href="mailto:luo_yihang@outlook.com" target="_blank">
-                <span class="fa-regular fa-envelope fa-2x" style="display:inline; text-decoration: none; color: #4a4a4a; margin-left: 15px"></span>
-              </a>
-            </div>
+  <!-- ====== NAV ====== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Yihang Luo</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
 
+  <!-- ====== HERO ====== -->
+  <section id="hero" class="hero">
+    <canvas id="lightCanvas"></canvas>
 
-            <div id="sidebar" class="menu sticky is-hidden-mobile">
-              <!-- <p class="menu-label"><b>Quick Links</b></p> -->
-              <ul class="menu-list">
-                <li><a href="#intro">About Me</a></li>
-                <!-- <li><a href="#experience">Experience</a></li> -->
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#others">Others</a></li>
-              </ul>
-            </div>
-          </div>
+    <div class="hero-content">
+      <div class="hero-avatar-wrapper">
+        <div class="avatar-glow"></div>
+        <img src="assets/avatar.jpg" alt="Yihang Luo" class="hero-avatar" />
+      </div>
 
-        </div>
-        <div class="column right-panel">
-          <div class="content">
-            <!--About Me-->
-            <h2 id="intro">About Me</h2>
-            <p style="text-align: justify;">
-              I am currently a first-year Ph.D. student at <a href="https://www.mmlab-ntu.com/" target="_blank">MMLab@NTU</a>, advised by <a href="https://www.mmlab-ntu.com/person/ccloy/" target="_blank">Prof. Chen Change Loy</a> and <a href="https://xingangpan.github.io/" target="_blank">Prof. Xingang Pan</a>. I obtained my B.S. degree in Computer Science in 2024 from <a href="https://www.ntu.edu.sg/" target="_blank">Nanyang Technological University</a>, where I spent a wonderful time serving as Software Leader for the NTU Super Computing Team.
-            </p>
+      <p class="hero-name-cn">罗奕航</p>
+      <h1 class="hero-name">Yihang Luo</h1>
+      <p class="hero-title">Ph.D. Student · MMLab@NTU</p>
 
-            <p style="text-align: justify;">
-              My research interests lie in 3D/4D spatial AI and generative world modeling enabled by it. I have also worked on low-level vision. Beyond research, I love working on complex systems and building infrastructure for AI training and inference pipelines.
-            </p>
-
-            <!--Experience-->
-            <!-- <h2 id="experience" style="margin-bottom: 25px;">Experience</h2>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/misc/amazon.png" class="img-logo">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p style="margin-bottom: 7px;">
-                    <b>Sr. Applied Scientist</b> | Amazon<br>
-                    Time: Jul 2025 - Present.
-                  </p>
-                  <p>
-                    <b>Applied Scientist II</b> | Amazon<br>
-                    Time: Jun 2022 - Jun 2025.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/misc/harvard.png" class="img-logo">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>Research Assistant</b> | School of Engineering and Applied Sciences, Harvard University<br>
-                    Time: Aug 2017 - Jun 2022. Advisor: Prof. <a href="https://vcg.seas.harvard.edu/people" target="_blank">Hanspeter Pfister</a>  
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/misc/aws.jpeg" class="img-logo">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>Applied Scientist Intern</b> | Amazon Web Services (AWS)<br>
-                    Time: May 2021 - Sep 2021. Mentor: Dr. <a href="https://scholar.google.com/citations?user=HmnRFhgAAAAJ&hl=en" target="_blank">Erhan Bas</a>  
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/misc/merl.png" class="img-logo">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>Research Intern</b> | Mitsubishi Electric Research Laboratories (MERL)<br>
-                    Time: May 2019 - Aug 2019. Mentor: Dr. <a href="https://scholar.google.com/citations?user=2yqx3oIAAAAJ&hl=en" target="_blank">Ziming Zhang</a>  
-                  </p>
-                </div>
-              </div>
-            </article> -->
-
-
-            <!--Publications-->
-            <h2 id="publications">
-              Publications
-              <span style="font-size: 1rem;margin-left: 1rem;position: relative;bottom: .2rem;">
-                <a href="https://scholar.google.com/citations?user=fZxK2B0AAAAJ&hl" target="_blank" style="font-size: 22px;">
-                  [Google Scholar]
-                </a>
-              </span>
-            </h2>
-
-            <!--List of publications-->
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <video src="images/publications/4RC.mp4" autoplay loop muted playsinline></video>
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>4RC: 4D Reconstruction via Conditional Querying Anytime and Anywhere</b><br>
-                    <b>Yihang Luo</b>, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy.<br>
-                    <i><b>Arxiv Preprint</b></i><br>
-                    <!-- [Releasing Soon] -->
-                    <a href="https://yihangluo.com/projects/4RC/" target="_blank">[Project Page]</a>
-                    <a href="https://arxiv.org/abs/2602.10094" target="_blank">[Paper]</a>
-                    <!-- 
-                    <a href="https://github.com/NIRVANALAN/STream3R" target="_blank">[Code]</a> -->
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <video src="images/publications/STream3R.mp4" autoplay loop muted playsinline></video>
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer</b><br>
-                    Yushi Lan*, <b>Yihang Luo*</b>, Fangzhou Hong, Shangchen Zhou, Honghua Chen, <br> Zhaoyang Lyu, Shuai Yang, Bo Dai, Chen Change Loy, Xingang Pan.<br>
-                    <i>International Conference on Learning Representations, <b>ICLR 2026</b></i><br>
-                    <a href="https://nirvanalan.github.io/projects/stream3r/" target="_blank">[Project Page]</a>
-                    <a href="https://arxiv.org/abs/2508.10893" target="_blank">[Paper]</a>
-                    <a href="https://github.com/NIRVANALAN/STream3R" target="_blank">[Code]</a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/publications/3DEnhancer.gif">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement</b><br>
-                    <b>Yihang Luo</b>, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy.<br>
-                    <i>Computer Vision and Pattern Recognition,  <b>CVPR 2025</b></i><br>
-                    <a href="https://yihangluo.com/projects/3DEnhancer/" target="_blank">[Project Page]</a>
-                    <a href="https://arxiv.org/abs/2412.18565" target="_blank">[Paper]</a>
-                    <a href="https://github.com/Luo-Yihang/3DEnhancer" target="_blank">[Code]</a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/publications/UpScaleaVideo.gif">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>
-                      Upscale-A-Video: Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution</b><br>
-                      Shangchen Zhou*, Peiqing Yang*, Jianyi Wang, <b>Yihang Luo</b>, Chen Change Loy.<br>
-                    <i>Computer Vision and Pattern Recognition,  <b>CVPR 2024</b></i><br>
-                    <a href="https://shangchenzhou.com/projects/upscale-a-video" target="_blank">[Project Page]</a>
-                    <a href="https://arxiv.org/abs/2312.06640" target="_blank">[Paper]</a>
-                    <a href="https://github.com/sczhou/Upscale-A-Video" target="_blank">[Code]</a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="columns">
-              <div class="column is-3">
-                <figure class="image">
-                  <img src="images/publications/BracketFlare.png">
-                </figure>
-              </div>
-              <div class="column">
-                <div class="content">
-                  <p>
-                    <b>
-                      Nighttime Smartphone Reflective Flare Removal Using Optical Center Symmetry Prior</b><br>
-                      Yuekun Dai, <b>Yihang Luo</b>, Shangchen Zhou, Chongyi Li, and Chen Change Loy.<br>
-                    <i>Computer Vision and Pattern Recognition,  <b>CVPR 2023</b></i><br>
-                    <a href="https://ykdai.github.io/projects/BracketFlare" target="_blank">[Project Page]</a>
-                    <a href="https://arxiv.org/abs/2303.15046" target="_blank">[Paper]</a>
-                    <a href="https://github.com/ykdai/BracketFlare" target="_blank">[Code]</a>
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!--Awards-->
-            <h2 id="awards">Awards</h2>
-            <ul>
-              <li>Nanyang President’s Graduate Scholarship (top-tier), 2025</li>
-              <li>Dean’s List of NTU (top 5%), 2024</li>
-              <li>Champion of ISC World Student Cluster Competition, 2023</li>
-              <li>Fifth Place of SC Supercomputing Competition, 2023</li>
-              <li>NTU President Research Scholarship, 2022</li>
-              <li>Singapore Science and Engineering Scholarship, 2020</li>
-            </ul>
-
-            <!--Services-->
-            <h2 id="services">Services</h2>
-            <ul>
-              <li>Conference Reviewer:
-                <br>&emsp;European Conference on Computer Vision (ECCV), 2026
-                <br>&emsp;International Conference on Machine Learning (ICML), 2026
-                <br>&emsp;Conference on Computer Vision and Pattern Recognition (CVPR), 2026
-                <br>&emsp;International Conference on Learning Representations (ICLR), 2026
-                <br>&emsp;International Conference on 3D Vision (3DV), 2026
-              <li>Workshop Organizer:
-                <br>&emsp;Co-organizer, <a href="https://mipi-challenge.org/MIPI2025/" target="_blank">Mobile Intelligent Photograph and Imaging Workshop (MIPI)</a>, ICCV 2025
-              </li>
-              <li>Software Leader, NTU Super Computing Team, 2022-2024</li>
-              <li>Main Committee, Institution of Engineering and Technology, NTU, 2021-2024</li>
-            </ul>
-
-            <!--Interests-->
-            <h2 id="others">Others</h2>
-            <p>
-              In my free time, I play badminton and occasionally participate in
-              <a href="https://sba.tournamentsoftware.com/tournament/AE585AB0-266C-43FC-8072-CDAB111276AE/player/254" target="_blank">
-              non-professional competitions</a>.
-              I also play the Chinese gourd flute (level 10) for enjoyment.
-            </p>
-          </div>
-        </div>
+      <div class="hero-links">
+        <a href="mailto:luo_yihang@outlook.com" class="hero-link-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=fZxK2B0AAAAJ&hl" target="_blank" rel="noopener" class="hero-link-btn" title="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://github.com/Luo-Yihang" target="_blank" rel="noopener" class="hero-link-btn" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yihang-luo/" target="_blank" rel="noopener" class="hero-link-btn" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="container" style="margin-top: 0.5rem; padding-top: 0; padding-bottom: 0.5rem;">
-      <hr style="margin: 0.5rem 0;">
-      <div class="row" style="text-align: center;">
-        <span style="font-size: 0.85em; font-style: italic;">Design from Zudi Lin</span>
-      </div>
-    </footer>
+    <a href="#about" class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </a>
   </section>
 
+  <!-- ====== ABOUT ====== -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-decorator">//</span> About Me
+      </h2>
+      <div class="about-text-only">
+        <p>
+          I am currently a first-year Ph.D. student at
+          <a href="https://www.mmlab-ntu.com/" target="_blank">MMLab@NTU</a>,
+          advised by
+          <a href="https://www.mmlab-ntu.com/person/ccloy/" target="_blank">Prof. Chen Change Loy</a> and
+          <a href="https://xingangpan.github.io/" target="_blank">Prof. Xingang Pan</a>.
+          I obtained my B.S. degree in Computer Science in 2024 from
+          <a href="https://www.ntu.edu.sg/" target="_blank">Nanyang Technological University</a>,
+          where I spent a wonderful time serving as Software Leader for the NTU Super Computing Team.
+        </p>
+        <p>
+          My research interests lie in <strong>3D/4D spatial AI and
+          generative world modeling enabled by it</strong> .
+          I have also worked on low-level vision.
+          Beyond research, I love working on complex systems and building infrastructure
+          for AI training and inference pipelines.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <script>
+  <!-- ====== PUBLICATIONS ====== -->
+  <section id="publications" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-decorator">//</span> Publications
+      </h2>
+      <p class="section-subtitle">
+        See full list on <a href="https://scholar.google.com/citations?user=fZxK2B0AAAAJ&hl" target="_blank">Google Scholar →</a>
+      </p>
 
-    var $hashList = $('.menu-list a'), offsetList, maxScrollHeight;
+      <div class="pub-list">
 
-    $('#sidebar').on('click', 'a', function(){
-      activate($(this))
-    });
-    
-    $(window).on('resize', debounce(calculateBoundary, 300));
+        <!-- 4RC -->
+        <article class="pub-card">
+          <div class="pub-image">
+            <video src="assets/publications/4RC.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="pub-info">
+            <div class="pub-venue">
+              <span class="venue-badge">Arxiv 2026</span>
+              <span class="pub-type">Preprint</span>
+            </div>
+            <h3 class="pub-title">4RC: 4D Reconstruction via Conditional Querying Anytime and Anywhere</h3>
+            <p class="pub-authors"><strong>Yihang Luo</strong>, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy.</p>
+            <div class="pub-links">
+              <a href="https://yihangluo.com/projects/4RC/" target="_blank" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+              <a href="https://arxiv.org/abs/2602.10094" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+          </div>
+        </article>
 
-    $(document).on('scroll', debounce(judgeScroll, 300));
+        <!-- STream3R -->
+        <article class="pub-card">
+          <div class="pub-image">
+            <video src="assets/publications/STream3R.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="pub-info">
+            <div class="pub-venue">
+              <span class="venue-badge">ICLR 2026</span>
+              <span class="pub-type">Conference</span>
+            </div>
+            <h3 class="pub-title">STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer</h3>
+            <p class="pub-authors">Yushi Lan*, <strong>Yihang Luo*</strong>, Fangzhou Hong, Shangchen Zhou, Honghua Chen, Zhaoyang Lyu, Shuai Yang, Bo Dai, Chen Change Loy, Xingang Pan.</p>
+            <div class="pub-links">
+              <a href="https://nirvanalan.github.io/projects/stream3r/" target="_blank" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+              <a href="https://arxiv.org/abs/2508.10893" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+              <a href="https://github.com/NIRVANALAN/STream3R" target="_blank" class="pub-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </article>
 
-    calculateBoundary();
-    judgeScroll();
-    
-    function  calculateBoundary() {
-      offsetList = $hashList.map(function(idx, ele){
-        return $(ele.hash).offset().top
-      });
-      maxScrollHeight = $(document).height() - $(window).height()
-    }
-    
-    function judgeScroll() {
-      var tps = $("html").scrollTop()
-              ? $("html").scrollTop()
-              : $("body").scrollTop(),
-              len = offsetList.length;
-      if(tps >= maxScrollHeight-10){
-        activate($hashList.eq(len-1));
-        return
-      }
-      for(var i=0; i<len; i++){
-       if(tps+50<offsetList[i]){
-          activate($hashList.eq(Math.max(0,i-1)));
-          return
-        }
-      }
-    }
+        <!-- 3DEnhancer -->
+        <article class="pub-card">
+          <div class="pub-image">
+            <img src="assets/publications/3DEnhancer.gif" alt="3DEnhancer" />
+          </div>
+          <div class="pub-info">
+            <div class="pub-venue">
+              <span class="venue-badge">CVPR 2025</span>
+              <span class="pub-type">Conference</span>
+            </div>
+            <h3 class="pub-title">3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement</h3>
+            <p class="pub-authors"><strong>Yihang Luo</strong>, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy.</p>
+            <div class="pub-links">
+              <a href="https://yihangluo.com/projects/3DEnhancer/" target="_blank" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+              <a href="https://arxiv.org/abs/2412.18565" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+              <a href="https://github.com/Luo-Yihang/3DEnhancer" target="_blank" class="pub-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </article>
 
-    function activate(ele){
-      $hashList.removeClass('is-active');
-      ele.addClass('is-active');
-    }
+        <!-- Upscale-A-Video -->
+        <article class="pub-card">
+          <div class="pub-image">
+            <img src="assets/publications/UpScaleaVideo.gif" alt="Upscale-A-Video" />
+          </div>
+          <div class="pub-info">
+            <div class="pub-venue">
+              <span class="venue-badge">CVPR 2024</span>
+              <span class="pub-type">Conference</span>
+            </div>
+            <h3 class="pub-title">Upscale-A-Video: Temporal-Consistent Diffusion Model for Real-World Video Super-Resolution</h3>
+            <p class="pub-authors">Shangchen Zhou*, Peiqing Yang*, Jianyi Wang, <strong>Yihang Luo</strong>, Chen Change Loy.</p>
+            <div class="pub-links">
+              <a href="https://shangchenzhou.com/projects/upscale-a-video" target="_blank" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+              <a href="https://arxiv.org/abs/2312.06640" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+              <a href="https://github.com/sczhou/Upscale-A-Video" target="_blank" class="pub-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </article>
 
-    function debounce(fn, delay) {
-      var timeout = null;
-      return function () {
-        var args = arguments;
-        var context = this;
-        if (!timeout) {
-          timeout = setTimeout(function () {
-            timeout = 0;
-            return fn.apply(context, args);
-          }, delay);
-        }
-      };
-    }
+        <!-- BracketFlare -->
+        <article class="pub-card">
+          <div class="pub-image">
+            <img src="assets/publications/BracketFlare.png" alt="BracketFlare" />
+          </div>
+          <div class="pub-info">
+            <div class="pub-venue">
+              <span class="venue-badge">CVPR 2023</span>
+              <span class="pub-type">Conference</span>
+            </div>
+            <h3 class="pub-title">Nighttime Smartphone Reflective Flare Removal Using Optical Center Symmetry Prior</h3>
+            <p class="pub-authors">Yuekun Dai, <strong>Yihang Luo</strong>, Shangchen Zhou, Chongyi Li, Chen Change Loy.</p>
+            <div class="pub-links">
+              <a href="https://ykdai.github.io/projects/BracketFlare" target="_blank" class="pub-link"><i class="fas fa-globe"></i> Project</a>
+              <a href="https://arxiv.org/abs/2303.15046" target="_blank" class="pub-link"><i class="fas fa-file-pdf"></i> Paper</a>
+              <a href="https://github.com/ykdai/BracketFlare" target="_blank" class="pub-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </article>
 
+      </div>
+    </div>
+  </section>
 
+  <!-- ====== AWARDS ====== -->
+  <section id="awards" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-decorator">//</span> Awards &amp; Honors
+      </h2>
+      <ul class="text-list">
+        <li>Nanyang President's Graduate Scholarship (top-tier), Singapore, 2025</li>
+        <li>Dean's List of NTU (top 5%), Singapore, 2024</li>
+        <li>Champion of ISC World Student Cluster Competition, Germany, 2023</li>
+        <li>Fifth Place of SC Supercomputing Competition, United States, 2023</li>
+        <li>NTU President Research Scholarship, Singapore, 2022</li>
+        <li>Singapore Science and Engineering Scholarship, Singapore, 2020</li>
+      </ul>
+    </div>
+  </section>
 
-  </script>
+  <!-- ====== SERVICES ====== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-decorator">//</span> Services
+      </h2>
+      <ul class="text-list">
+        <li>
+          <strong>Conference Reviewer:</strong>
+          ECCV, ICML, CVPR, ICLR, 3DV
+        </li>
+        <li>
+          <strong>Workshop Organizer:</strong>
+          Co-organizer, <a href="https://mipi-challenge.org/MIPI2025/" target="_blank">Mobile Intelligent Photograph and Imaging Workshop (MIPI)</a>, ICCV 2025
+        </li>
+        <li>Software Leader, NTU Super Computing Team, 2022–2024</li>
+        <li>Main Committee, Institution of Engineering and Technology, NTU, 2021–2024</li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- ====== BEYOND RESEARCH ====== -->
+  <section id="beyond" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-decorator">//</span> Beyond Research
+      </h2>
+      <p class="text-paragraph">
+        In my free time, I play badminton and occasionally participate in
+        <a href="https://sba.tournamentsoftware.com/tournament/AE585AB0-266C-43FC-8072-CDAB111276AE/player/254" target="_blank">non-professional competitions</a>.
+        I also play the Chinese gourd flute (level 10) for enjoyment.
+      </p>
+    </div>
+  </section>
 
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer" id="footerQuoteTrigger" aria-label="Click to change quote">
+    <div class="footer-glow">
+      <img src="assets/footer-gradient.webp" alt="" class="footer-glow-img" />
+    </div>
+    <div class="footer-content footer-layout">
+      <div class="footer-quote footer-quote-left">
+        <p class="footer-quote-text" id="footerQuoteLeft">不识庐山真面目</p>
+      </div>
+      <div class="footer-brand">
+        <p class="footer-text">Yihang Luo</p>
+        <p class="footer-sub">© 2026 · Design inspired by xAI</p>
+      </div>
+      <div class="footer-quote footer-quote-right">
+        <p class="footer-quote-text footer-quote-text-right" id="footerQuoteRight">只缘身在此山中</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
-
 </html>
