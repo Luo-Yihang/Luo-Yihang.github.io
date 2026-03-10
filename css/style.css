@@ -104,6 +104,7 @@ img { max-width: 100%; display: block; }
 .nav-logo {
   font-size: 0.9rem; font-weight: 600;
   color: var(--text-1); letter-spacing: 0.3px;
+  font-family: 'Liu Jian Mao Cao', cursive;
 }
 
 .nav-menu { display: flex; list-style: none; gap: 4px; }
