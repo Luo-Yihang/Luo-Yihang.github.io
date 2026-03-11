@@ -214,8 +214,9 @@ img { max-width: 100%; display: block; }
   font-weight: 400;
 }
 .hero-name {
+  font-family: "Source Code Pro", monospace;
   font-size: clamp(1.85rem, 4.4vw, 2.7rem);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -1px;
   line-height: 1.05;
   margin-bottom: 10px;
