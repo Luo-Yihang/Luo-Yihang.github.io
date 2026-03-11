@@ -171,6 +171,11 @@ img { max-width: 100%; display: block; }
   position: relative; width: 100%; height: 100vh; min-height: 600px;
   display: flex; align-items: center; justify-content: center;
   background: var(--hero-bg); overflow: hidden;
+  /* Prevent text/image selection in hero */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #lightCanvas {
