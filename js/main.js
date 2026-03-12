@@ -258,6 +258,7 @@ void main() {
       this.lastTime = 0;
       this.pingpong = 0;
       this.dpr = Math.min(window.devicePixelRatio || 1, 1);
+      this.firstFrame = true;
 
       this._initGL();
       this._resize();
@@ -292,9 +293,22 @@ void main() {
       const gl = this.gl;
       const tex = gl.createTexture();
       gl.bindTexture(gl.TEXTURE_2D, tex);
+      
+      // Initialize with neutral color (RGBA: 128, 128, 0, 0) to prevent black flash on first frame
+      // This matches the trail shader's initial decay state: vec4(0.5, 0.5, 0.0, 0.0)
+      const w = this.canvas.width || 1;
+      const h = this.canvas.height || 1;
+      const data = new Uint8Array(w * h * 4);
+      for (let i = 0; i < data.length; i += 4) {
+        data[i] = 128;     // R
+        data[i + 1] = 128; // G
+        data[i + 2] = 0;   // B
+        data[i + 3] = 0;   // A
+      }
+      
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA,
-                    this.canvas.width, this.canvas.height,
-                    0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+                    w, h,
+                    0, gl.RGBA, gl.UNSIGNED_BYTE, data);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
@@ -401,9 +415,17 @@ void main() {
       // Resize FBO textures
       if (this.fbos) {
         const gl = this.gl;
+        // Initialize with neutral color to prevent black flash on resize
+        const data = new Uint8Array(w * h * 4);
+        for (let i = 0; i < data.length; i += 4) {
+          data[i] = 128;     // R
+          data[i + 1] = 128; // G
+          data[i + 2] = 0;   // B
+          data[i + 3] = 0;   // A
+        }
         this.fbos.forEach(f => {
           gl.bindTexture(gl.TEXTURE_2D, f.tex);
-          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, data);
         });
       }
     }
@@ -479,6 +501,12 @@ void main() {
       gl.uniform1i(this.uMain.uTrailTexture, 1);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+      // Mark canvas as ready after first frame to prevent black flash
+      if (this.firstFrame) {
+        this.canvas.classList.add('ready');
+        this.firstFrame = false;
+      }
 
       this.pingpong = next;
       requestAnimationFrame(t => this._loop(t));
